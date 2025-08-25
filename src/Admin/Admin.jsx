@@ -31,7 +31,7 @@ export default function Admin() {
 
         try {
 
-            const response = await fetch(`http://localhost:8090/api/users`, {
+            const response = await fetch(`https://test1-latest-sml8.onrender.com/api/users`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export default function Admin() {
 
 
 
-            const response2 = await fetch(`http://localhost:8090/api/auth/register`, {
+            const response2 = await fetch(`https://test1-latest-sml8.onrender.com/api/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -336,7 +336,7 @@ function RemoveUserForm() {
     const fetchUsers = async () => {
         try {
             setLoading(true);
-            const response = await fetch("http://localhost:8090/api/users");
+            const response = await fetch("https://test1-latest-sml8.onrender.com/api/users");
 
             if (response.ok) {
                 const data = await response.json();
@@ -369,7 +369,7 @@ function RemoveUserForm() {
         }
 
         try {
-            const response = await fetch(`http://localhost:8090/api/users/${selectedUser}`, {
+            const response = await fetch(`https://test1-latest-sml8.onrender.com/api/users/${selectedUser}`, {
                 method: "DELETE",
             });
 
@@ -460,7 +460,7 @@ function PaymentForm({ onClose, setError, setSuccess }) {
         const fetchUsersForPayment = async () => {
             try {
                 setLoading(true);
-                const response = await fetch("http://localhost:8090/api/users");
+                const response = await fetch("https://test1-latest-sml8.onrender.com/api/users");
 
                 if (response.ok) {
                     const data = await response.json();
@@ -510,7 +510,7 @@ function PaymentForm({ onClose, setError, setSuccess }) {
             console.log("Sending payment data:", requestBody);
 
 
-            const response = await fetch("http://localhost:8090/api/payments/create", {
+            const response = await fetch("https://test1-latest-sml8.onrender.com/api/payments/create", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
