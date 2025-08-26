@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./User.css";
 
-const API_BASE = 'http://localhost:8090';
+const API_BASE = 'https://test1-latest-sml8.onrender.com';
 
 
 const toNumber = (value) => {
@@ -136,7 +136,7 @@ function User() {
                     tokenizationSpecification: {
                         type: "PAYMENT_GATEWAY",
                         parameters: {
-                            gateway: "example", // Replace with your gateway
+                            gateway: "example",
                             gatewayMerchantId: "exampleGatewayMerchantId",
                         },
                     },
@@ -145,10 +145,10 @@ function User() {
             transactionInfo: {
                 totalPriceStatus: "FINAL",
                 totalPrice: (amountDue / 100).toFixed(2),
-                currencyCode: "USD",
+                currencyCode: "LKR",
             },
             merchantInfo: {
-                merchantId: "BCR2DN4T6XXXXX", // Replace with your merchantId
+                merchantId: "4216890352445255",
                 merchantName: "Bodima",
             },
         };
@@ -156,7 +156,7 @@ function User() {
         try {
             const paymentData = await paymentsClient.loadPaymentData(paymentDataRequest);
 
-            // Send payment to backend
+
             if (user?.userId) {
                 await createPayment({
                     userId: user.userId,
