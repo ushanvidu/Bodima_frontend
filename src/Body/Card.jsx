@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiStar, FiMapPin, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './Card.css';
+import {Link} from "react-router-dom";
 
 // Mock database (replace with actual API calls)
 const fetchBoardingHouses = async () => {
@@ -65,7 +66,8 @@ function BoardingCard({ boarding }) {
                         <span key={index} className="amenity-tag">{amenity}</span>
                     ))}
                 </div>
-                <button className="card-button">View Details</button>
+                <Link to="/rooms">
+                <button className="card-button">View Details</button></Link>
             </div>
         </div>
     );
